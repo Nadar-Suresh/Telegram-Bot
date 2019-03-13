@@ -2,13 +2,13 @@ from twisted.internet import task, reactor
 import requests
 import json
 
-timeout = 180.0 # Sixty seconds
-token = "609512942:AAHCXKBKWEAhSuMpRWTW7qPne3kIiXJZ-Zo"
+timeout = 14400.0 # Sixty seconds
+token = "552545969:AAHmuCZ8fdjggXtCcOmnLinv1Utfa_N_cEc"
 array_size = 0
 
 def send(text):
-    params = {'chat_id': '@testingbotxinfin', 'text': text,"parse_mode":"HTML"}
-    sresp = requests.post('https://api.telegram.org/bot609512942:AAHCXKBKWEAhSuMpRWTW7qPne3kIiXJZ-Zo/sendMessage', params)
+    params = {'chat_id': '@xinfintalk', 'text': text,"parse_mode":"HTML"}
+    sresp = requests.post('https://api.telegram.org/bot552545969:AAHmuCZ8fdjggXtCcOmnLinv1Utfa_N_cEc/sendMessage', params)
 
 def message_picker():
     with open('messages.json') as json_file:
@@ -43,6 +43,6 @@ def eight_hour_msg():
 # l.start(timeout) # call every sixty seconds
 
 lnewtask = task.LoopingCall(eight_hour_msg)
-lnewtask.start(20)
+lnewtask.start(43200)
 
 reactor.run()
