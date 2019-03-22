@@ -42,6 +42,6 @@ l = task.LoopingCall(message_picker)
 l.start(timeout) # call every sixty seconds
 
 lnewtask = task.LoopingCall(eight_hour_msg)
-lnewtask.start(43200)
+lnewtask.start(41200)
 
 reactor.run()
